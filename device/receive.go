@@ -20,7 +20,7 @@ import (
 )
 
 type QueueHandshakeElement struct {
-	msgType  uint32
+	msgType  uint8
 	packet   []byte
 	endpoint conn.Endpoint
 	buffer   *[MaxMessageSize]byte
@@ -135,7 +135,7 @@ func (device *Device) RoutineReceiveIncoming(maxBatchSize int, recv conn.Receive
 			// check size of packet
 
 			packet := bufsArrs[i][:size]
-			msgType := binary.LittleEndian.Uint32(packet[:4])
+			msgType := uint8(packet[0])
 
 			switch msgType {
 

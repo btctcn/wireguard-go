@@ -82,7 +82,7 @@ const (
  */
 
 type MessageInitiation struct {
-	Type      uint32
+	Type      uint8
 	Sender    uint32
 	Ephemeral NoisePublicKey
 	Static    [NoisePublicKeySize + poly1305.TagSize]byte
@@ -92,7 +92,7 @@ type MessageInitiation struct {
 }
 
 type MessageResponse struct {
-	Type      uint32
+	Type      uint8
 	Sender    uint32
 	Receiver  uint32
 	Ephemeral NoisePublicKey
@@ -102,14 +102,14 @@ type MessageResponse struct {
 }
 
 type MessageTransport struct {
-	Type     uint32
+	Type     uint8
 	Receiver uint32
 	Counter  uint64
 	Content  []byte
 }
 
 type MessageCookieReply struct {
-	Type     uint32
+	Type     uint8
 	Receiver uint32
 	Nonce    [chacha20poly1305.NonceSizeX]byte
 	Cookie   [blake2s.Size128 + poly1305.TagSize]byte

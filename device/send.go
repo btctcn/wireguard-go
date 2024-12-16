@@ -457,7 +457,13 @@ func (device *Device) RoutineEncryption(id int) {
 			fieldReceiver := header[4:8]
 			fieldNonce := header[8:16]
 
-			binary.LittleEndian.PutUint32(fieldType, MessageTransportType)
+			//turn off default logic and enable fill three reserved bytes as 0x0 0x3 0x3
+			//binary.LittleEndian.PutUint32(fieldType, MessageTransportType)
+			fieldType[0] = MessageTransportType
+			fieldType[1] = 0
+			fieldType[2] = 5
+			fieldType[3] = 5
+
 			binary.LittleEndian.PutUint32(fieldReceiver, elem.keypair.remoteIndex)
 			binary.LittleEndian.PutUint64(fieldNonce, elem.nonce)
 
