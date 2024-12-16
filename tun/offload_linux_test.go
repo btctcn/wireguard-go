@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/btctcn/wireguard-go/conn"
-	"github.com/btctcn/wireguard-god-go
+	"github.com/btctcn/wireguard-go
 	"gvisor.dev/gvisor/pkg/tcpip"
 	"gvisor.dev/gvisor/pkg/tcpip/header"
 )

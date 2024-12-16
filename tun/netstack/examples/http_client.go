@@ -13,9 +13,9 @@ import (
 	"net/http"
 	"net/netip"
 
+	"github.com/btctcn/wireguard-go/conn"
 	"github.com/btctcn/wireguard-go/device"
 	"github.com/btctcn/wireguard-go/tun/netstack"
-	"github.com/btctcn/wireguard-god-go/conn"
 )
 
 func main() {
