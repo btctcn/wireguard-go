@@ -13,7 +13,7 @@ import (
 	"unsafe"
 
 	"github.com/btctcn/wireguard-go/conn"
-	"github.com/btctcn/wireguard-go
+	"golang.org/x/sys/unix"
 )
 
 const tcpFlagsOffset = 13
